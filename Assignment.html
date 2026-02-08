@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Folder Tree</title>
+
+<style>
+/* From Uiverse.io by ashif_6672 */ 
+.tree-container {
+  width: 320px;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 24px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul ul {
+  margin-left: 11px;
+  padding-left: 11px;
+  border-left: 1px solid #e4e4e7;
+}
+
+.tree-item {
+  position: relative;
+  margin-top: 4px;
+}
+
+ul ul .tree-item::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 14px;
+  width: 11px;
+  height: 1px;
+  background-color: #e4e4e7;
+}
+
+.tree-label,
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #09090b;
+  transition: background-color 0.2s;
+  user-select: none;
+  height: 28px;
+}
+
+.tree-label:hover,
+.file-item:hover {
+  background-color: #f4f4f5;
+}
+
+.is-selected {
+  background-color: #f4f4f5;
+  font-weight: 500;
+}
+
+.tree-toggle {
+  display: none;
+}
+
+.tree-children-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.tree-children {
+  overflow: hidden;
+}
+
+.tree-toggle:checked ~ .tree-children-wrapper {
+  grid-template-rows: 1fr;
+}
+.file-item a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="tree-container">
+  <ul>
+
+    <!-- Assignment -->
+    <li class="tree-item">
+      <input type="checkbox" id="assignment" class="tree-toggle" checked>
+      <label for="assignment" class="tree-label">📁 assignment</label>
+
+      <div class="tree-children-wrapper">
+        <ul class="tree-children">
+
+          <!-- C Folder -->
+          <li class="tree-item">
+            <input type="checkbox" id="c" class="tree-toggle" checked>
+            <label for="c" class="tree-label">📁 c</label>
+
+            <div class="tree-children-wrapper">
+              <ul class="tree-children">
+  <li class="file-item">
+    <a href="383_Assignment.pdf" target="_blank">📄 2</a>
+  </li>
+
+  <li class="file-item">
+    <a href="pdf/c-programs.pdf" target="_blank">📄 2</a>
+  </li>
+</ul>
+            </div>
+          </li>
+
+          <!-- HTML Folder -->
+          <li class="tree-item">
+            <input type="checkbox" id="html" class="tree-toggle" checked>
+            <label for="html" class="tree-label">📁 html</label>
+
+            <div class="tree-children-wrapper">
+              <ul class="tree-children">
+                <li class="file-item is-selected">📄 3</li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+</body>
+</html>
