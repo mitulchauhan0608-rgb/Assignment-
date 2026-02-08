@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asignment</title>
+
+<style>
+/* Dark Theme Folder Tree */
+
+body {
+  background-color: #0f172a;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Container */
+.tree-container {
+  width: 320px;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 20px;
+  background: #020617;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  color: #e5e7eb;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul ul {
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid #334155;
+}
+
+/* Tree item */
+.tree-item {
+  position: relative;
+  margin-top: 6px;
+}
+
+ul ul .tree-item::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 14px;
+  width: 12px;
+  height: 1px;
+  background-color: #334155;
+}
+
+/* Folder & file */
+.tree-label,
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #e5e7eb;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+/* Hover effect */
+.tree-label:hover,
+.file-item:hover {
+  background-color: #1e293b;
+}
+
+/* Icons */
+.tree-label span,
+.file-item span {
+  font-size: 16px;
+}
+
+/* Links inside file */
+.file-item a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.file-item a:hover {
+  text-decoration: underline;
+}
+
+/* Toggle */
+.tree-toggle {
+  display: none;
+}
+
+/* Open/close animation */
+.tree-children-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.tree-children {
+  overflow: hidden;
+}
+
+.tree-toggle:checked ~ .tree-children-wrapper {
+  grid-template-rows: 1fr;
+}
+</style>
+</head>
+
+<body>
+
+<div class="tree-container">
+  <ul>
+    <li class="tree-item">
+      <input type="checkbox" id="folder-src" class="tree-toggle" checked>
+      <label for="folder-src" class="tree-label">
+        <span>📁</span>Asignment
+      </label>
+
+      <div class="tree-children-wrapper">
+        <ul class="tree-children">
+
+          <li class="tree-item">
+            <input type="checkbox" id="folder-app" class="tree-toggle" checked>
+            <label for="folder-app" class="tree-label">
+              <span>📁</span> c
+            </label>
+
+            <div class="tree-children-wrapper">
+              <ul class="tree-children">
+                <li class="tree-item">
+                  <div class="file-item">📄</div>
+                </li>
+                <li class="tree-item">
+                  <div class="file-item">📄 page.tsx</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tree-item">
+            <input type="checkbox" id="folder-components" class="tree-toggle" checked>
+            <label for="folder-components" class="tree-label">
+              <span>📁</span> web
+            </label>
+
+            <div class="tree-children-wrapper">
+              <ul class="tree-children">
+                <li class="tree-item">
+                  <input type="checkbox" id="folder-ui" class="tree-toggle" checked>
+                 
+                
+                        
+
+                <li class="tree-item">
+                  <div class="file-item"><a href="web1.pdf">Asignment 2</a></div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>
